@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+//apply from: 'amt_tp_library_config.gradle'
+
+apply plugin: 'amt.statistics'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.amt.code.android"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+//    JarInput name: com.google.android.material
+//    JarInput name: com.squareup.okio
+//    JarInput name: com.squareup.okhttp3
+//    JarInput name: com.scwang.smart
+//    JarInput name: msa_mdid_1.0.13
+//    JarInput name: com.gyf.immersionbar
+//    JarInput name: com.github.bumptech.glide
+//    JarInput name: humesdk-1.0.0
+//    JarInput name: org.jetbrains.kotlin
+//    JarInput name: com.google.code.gson
+//    JarInput name: org.jetbrains
+//    JarInput name: com.blankj
+
+    // GSON - JSON解析
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // 图片加载库
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    // 通知栏TooBar控制
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    // OKHttp依赖项
+    implementation("com.squareup.okhttp3:okhttp:3.12.1")
+//    implementation 'com.blankj:utilcode:1.29.0'
+    //implementation 'org.conscrypt:conscrypt-android:2.4.0'
+
+    // 注意：分包之后不会有默认的Header和Footer需要手动添加！还是原来的三种方法！
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+
+    // 头条渠道 - 获取id
+    implementation files('libs/humesdk-1.0.0.aar')
+
+    //OAID
+    implementation files('libs/msa_mdid_1.0.13.aar')
+
+    implementation 'com.amt.code.plugin.statistics:PluginStatistics:1.1.0'
+
+    // 网络检测工具
+//    implementation 'com.github.stealthcopter:AndroidNetworkTools:0.4.5.3'
+}

@@ -1,0 +1,34 @@
+/**
+ * 第三方库引用白名单插件
+ */
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    // 使用android的API，需要引用这个，实现Transform的时候会用到
+    implementation 'com.android.tools.build:gradle:4.0.2'
+
+    // 简体/繁体
+    implementation 'com.github.houbb:opencc4j:1.6.0'
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //设置插件的GAV参数
+            pom.groupId = 'com.amt.code.plugin.inspect'
+            pom.artifactId = 'PluginInspect'
+            pom.version = '1.1.0'
+            //文件发布到下面目录
+            repository(url: uri('../repo'))
+        }
+    }
+}

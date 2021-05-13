@@ -1,0 +1,5 @@
+include ':Plugin_Inspect'
+include ':Plugin_Statistics'
+include ':Plugin_Common'
+include ':app'
+rootProject.name = "AMT_Plugin"

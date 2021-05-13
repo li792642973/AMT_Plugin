@@ -1,0 +1,25 @@
+/**
+ * 第三方引用库白名单
+ */
+
+apply plugin: 'amt.inspect'
+
+AmtTpLibraryConfig {
+    whiteList = [
+        //添加白名单后，对白名单引用库不做处理
+        "com.squareup.okhttp3:okhttp",
+        "com.scwang.smart:refresh-layout-kernel",
+        "msa_mdid_1.0.13",
+        "com.google.code.gson:gson",
+        "com.google.android.material:material",
+        "com.github.bumptech.glide:annotations",
+        "com.github.bumptech.glide:glide",
+        "com.github.bumptech.glide:gifdecoder",
+        "com.scwang.smart:refresh-drawable-paint",
+        "com.github.bumptech.glide:disklrucache",
+        "com.scwang.smart:refresh-header-classics",
+        "humesdk-1.0.0",
+        "com.scwang.smart:refresh-footer-classics",
+        "com.squareup.okio:okio"
+    ]
+}

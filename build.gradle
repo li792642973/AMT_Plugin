@@ -9,7 +9,6 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.2"
-
 //        classpath 'com.amt.code.plugin.inspect:PluginInspect:1.1.0'
         classpath 'com.amt.code.plugin.statistics:PluginStatistics:1.1.0'
     }
